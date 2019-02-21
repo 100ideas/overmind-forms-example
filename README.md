@@ -2,7 +2,7 @@
 
 for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
-[codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-demo/tree/codesandbox_v1)
+[codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-example/tree/codesandbox_v1)
 
 
 ![screenshot_2019-02-20.png](public/screenshot_2019-02-20.png)
