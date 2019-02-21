@@ -16,8 +16,26 @@ for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 ---
 
 ## 20 Feb 2019 patch notes (@100ideas)
-see https://github.com/100ideas/overmind-forms for details
+see https://github.com/100ideas/overmind-forms for details of patch
 
-in case of problems w/ master, check the `codesandbox_v1` branch, it is stable. https://github.com/100ideas/overmind-forms-demo/tree/codesandbox_v1
+set up `package.json` to pull my fork of `overmind-forms` via 
+```bash
+yarn add https://github.com/100ideas/overmind-forms#hack
+```
+
+then `package.json` will look like
+```json
+//...
+  "dependencies": {
+    "axios": "0.18.0",
+    "jsonata": "^1.6.4",
+    "overmind": "15.1.2",
+    "overmind-forms": "https://github.com/100ideas/overmind-forms#hack",
+//...
+```
+
+or you can use `yarn link` to make changes to a local copy. You'll have to run `yarn build` in the package directory after changes. 
+
+in case of problems on codesandbox, try the `codesandbox_v1` branch, hopefully it still works over there. https://github.com/100ideas/overmind-forms-demo/tree/codesandbox_v1
 
 ---
