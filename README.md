@@ -4,6 +4,9 @@ for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
 [codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-demo/tree/codesandbox_v1)
 
+
+![screenshot_2019-02-20.png](public/screenshot_2019-02-20.png)
+
 **Note:** you may need to use a patched version of `overmind-forms` - see below
 
 `overmind-forms` documentation here: https://github.com/garth/overmind-forms
@@ -14,8 +17,6 @@ for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
 ## 20 Feb 2019 patch notes (@100ideas)
 see https://github.com/100ideas/overmind-forms for details
-
-Also see 
 
 in case of problems w/ master, check the `codesandbox_v1` branch, it is stable. https://github.com/100ideas/overmind-forms-demo/tree/codesandbox_v1
 
