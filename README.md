@@ -2,6 +2,8 @@
 
 for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
+this repo: https://github.com/100ideas/overmind-forms-demo/
+
 [codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-example/tree/codesandbox_v1)
 
 
@@ -15,26 +17,63 @@ for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
 ---
 
-## 20 Feb 2019 patch notes (@100ideas)
-see https://github.com/100ideas/overmind-forms for details of patch
+## 21 Feb 2019 patch notes (@100ideas)
 
-set up `package.json` to pull my fork of `overmind-forms` via 
-```bash
-yarn add https://github.com/100ideas/overmind-forms#hack
-```
+this folder is a fork of source code of the overmind-forms node package with small patch.
+- original: https://github.com/garth/overmind-forms
+- patch: https://github.com/100ideas/overmind-forms
+- demo repo: https://github.com/100ideas/overmind-forms-demo/ (see codesandbox_v1 branch)
+- [codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-example/tree/codesandbox_v1)
 
-then `package.json` will look like
+had to merge `hack` branch into `master` branch of my fork of `overmind-forms` since codesandbox can't handle references to node packages on github that include a branch or commit, ie:
+
 ```json
-//...
-  "dependencies": {
-    "axios": "0.18.0",
-    "jsonata": "^1.6.4",
-    "overmind": "15.1.2",
-    "overmind-forms": "https://github.com/100ideas/overmind-forms#hack",
-//...
+// in package.json
+  "dependencies": {                                       // what happens on codesandbox?
+    "overmind-forms": "100ideas/overmind-forms#hack",     // fail - desired branch
+    "overmind-forms": "100ideas/overmind-forms#70fdc88",  // fail - commit-ish of hack 
+    "overmind-forms": "100ideas/overmind-forms",          // works - but is master branch
 ```
 
-or you can use `yarn link` to make changes to a local copy. You'll have to run `yarn build` in the package directory after changes. 
+I also noticed codesandbox having trouble compiling the typescript source of the package on install (since this demo repo is a js create-react-app template and somewhere or other not all the right ts / babel deps are getting specified). 
+
+So over in my fork of `overmind-forms`, I un-gitignored the built directories (`es/`, `lib/`), added them to the repo, and disabled the build directives triggered by the `prepare` script in the packages' `package.json`. That worked for codesandbox.
+
+#### alternative solution
+
+didn't end up doing this because would require manually syncing patch directory with changes to fork repo, but it works
+
+```shell
+$ tree -L 1 .
+.
+├── overmind-forms/
+└── overmind-forms-example/
+
+$ cd overmind-forms-example
+$ mkdir patch
+$ cp -r overmind-forms patch/
+```
+
+```json
+// package.json
+//...
+"dependencies": {
+    "overmind": "15.1.2",
+    "overmind-react": "16.1.3",
+    // "overmind-forms": "100ideas/overmind-forms",
+    //...
+  },
+  "peerDependencies": {
+    "overmind-forms": "100ideas/overmind-forms#hack",
+  },
+  "scripts": {
+    "postinstall": "cp -r patch/overmind-forms node_modules/",
+    // ...
+```
+
+## 20 Feb 2019 patch notes (@100ideas)
+
+see https://github.com/100ideas/overmind-forms for details of patch and instructions for developing locally.
 
 in case of problems on codesandbox, try the `codesandbox_v1` branch, hopefully it still works over there. https://github.com/100ideas/overmind-forms-demo/tree/codesandbox_v1
 
