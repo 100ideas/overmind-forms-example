@@ -14,8 +14,8 @@ export const state = form({
     isValid: val => validator(val, ["minLength:4", "isAlphanumeric"])
   },
   field3: {
-    value: '["foo", "bar", "baz", "mip"]',
-    isValid: val => validator(val, ["isAlphanumeric", "minLength:3"])
+    value: "tell us about yourself...",
+    isValid: val => validator(val, ["isWords", "minLength:3"])
   }
 });
 

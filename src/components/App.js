@@ -1,6 +1,6 @@
 import React from "react";
 import { useOvermind } from "../overmind";
-// import Users from "./Users";
+import Users from "./Users";
 import LoginForm from "./LoginForm";
 
 import JSONfn from "../util";
@@ -28,6 +28,7 @@ const App = () => {
         </h3>
         <hr />
         {/* state.currentPage === "users" ? <Users /> : null */}
+        <Users />
       </nav>
 
       <div className="content">
