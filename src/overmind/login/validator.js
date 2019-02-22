@@ -1,4 +1,5 @@
 /* eslint-disable no-useless-escape, no-control-regex */
+// https://github.com/garth/state-forms/blob/master/src/utils/validate.js
 
 export const rules = {
   _errorMessages: {},

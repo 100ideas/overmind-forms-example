@@ -1,7 +1,7 @@
 import { parallel, action } from "overmind";
-import { jsonata } from 'jsonata'
+import { jsonata } from "jsonata";
 
-export const checkValidationError = (form) => {
-  let errors = jsonata('**[isValid=false]').evaluate(state.loginForm)
-
-}
+// not currently in use
+export const checkValidationError = state => {
+  let errors = jsonata("**[isValid=false]").evaluate(state.loginForm);
+};
