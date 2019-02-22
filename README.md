@@ -2,10 +2,15 @@
 
 for overmind v15.1.2 & react v16.8.1 using @garth's `overmind-forms` package
 
-this repo: https://github.com/100ideas/overmind-forms-demo/
-
-[codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-example/tree/codesandbox_v1)
-
+- this repo: https://github.com/100ideas/overmind-forms-demo/
+- [codesandbox demo](https://codesandbox.io/s/github/100ideas/overmind-forms-example/tree/codesandbox_v1)
+- learn about overmind: https://overmindjs.org
+- patched overmind-forms repo: https://github.com/100ideas/overmind-forms
+- future of overmind-forms: https://github.com/garth/overmind-forms/pull/1#issuecomment-466242602
+- similar / better than overmind-forms?:
+  - https://github.com/garth/react-hooks-forms
+  - https://github.com/garth/state-forms
+- overmind discord chat https://discord.gg/nByU3ZE)
 
 ![screenshot_2019-02-20.png](public/screenshot_2019-02-20.png)
 
@@ -27,7 +32,7 @@ this folder is a fork of source code of the overmind-forms node package with sma
 
 had to merge `hack` branch into `master` branch of my fork of `overmind-forms` since codesandbox can't handle references to node packages on github that include a branch or commit, ie:
 
-```json
+```jsonc
 // in package.json
   "dependencies": {                                       // what happens on codesandbox?
     "overmind-forms": "100ideas/overmind-forms#hack",     // fail - desired branch
@@ -54,7 +59,7 @@ $ mkdir patch
 $ cp -r overmind-forms patch/
 ```
 
-```json
+```jsonc
 // package.json
 //...
 "dependencies": {
