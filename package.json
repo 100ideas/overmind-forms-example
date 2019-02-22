@@ -1,7 +1,9 @@
 {
-  "name": "garth-overmind-forms-example",
+  "name": "overmind-forms-example",
   "version": "0.2.0",
-  "description": "https://github.com/garth/overmind-forms",
+  "author": "100ideas",
+  "license": "MIT",
+  "description": "overmind-forms with validation using patched 100ideas/overmind-forms. https://github.com/100ideas/overmind-forms-example",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
